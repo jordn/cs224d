@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stanford University CS224d: Deep Learning for Natural Language Processing</title>
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  <!-- Google fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+
+  <!-- Google Analytics -->
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-60458624-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+
+<body>
+
+<div id="header">
+  <a href="http://nlp.stanford.edu/">
+    <img src="http://nlp.stanford.edu/sentiment/images/nlp-logo.gif" style="height:50px; float: left; margin-left: 20px;">
+  </a>
+  <a href="index.html">
+    <h1>CS224d: Deep Learning for Natural Language Processing</h1>
+  </a>
+  <div style="clear:both;"></div>
+</div>
+
+<div style="background-color:#8C1515; color:#FFF; padding:15px;">
+<h1>Course Project</h1>
+</div>
+
+
+<!-- <div class="container sec">
+  Warning: Details still subject to change
+</div> -->
+
+<div class="container sec">
+  <h2>Overview</h2>
+  <p>The Course Project is worth a significant portion of your grade. It offers you the chance to flex your newly acquired skills toward an application of your choosing.  </p>
+
+    <!-- Conferences -->
+    <p>To inspire ideas, you might look at recent deep learning publications from top-tier NLP conferences and labs, as well as other resources below.</p>
+    <ul>
+      <li><a href="http://nips.cc/">NIPS</a>: Neural Information Processing Systems</li>
+      <li><a href="http://icml.cc/">ICML</a>: International Conference on Machine Learning</li>
+      <li><a href="http://emnlp2014.org">EMNLP</a>: Empirical Methods in Natural Language Processing</li>
+      <li><a href="https://www.aclweb.org/">ACL</a>: Association for Computational Linguistics</li>
+      <li><a href="http://cs229.stanford.edu/projects2013.html">Past CS229 Projects</a>: Example projects from Stanford machine learning class</li>
+      <li><a href="http://nlp.stanford.edu/publications.shtml">Stanford NLP Group</a>: New and relavent papers from local faculty</li>
+      <li><a href="http://www.kaggle.com/">Kaggle challenges</a>: An online machine learning competition website</li>
+      <li><a href="https://github.com/stanfordnlp/CoreNLP">Stanford's CoreNLP</a>: A Java suite of Core NLP tools </li>
+      <li><a href="https://github.com/aritter/twitter_nlp">NLP+Twitter</a>: Twitter NLP tools </li>
+      <li><a href="https://github.com/NLPchina/nlp-lang">Chinese NLP tools</a>: NLP for Chinese text </li>
+    </ul>
+    <!-- Example Applications -->
+    <p>For applications, this type of projects would involve careful data preparation, an appropriate loss function, details of training and cross-validation and good test set evaluations and model comparisons. Don't be afraid to think outside of the box. </p>
+    <!-- Cool papers -->
+    <p>For models, we have included below some pretty cool papers.</p>
+    <ul>
+      <li><strong> <a href="http://www.jmlr.org/papers/volume12/collobert11a/collobert11a.pdf">Natural Language Processing (Almost) From Scratch</a></strong></li>
+      <li><strong> <a href="http://arxiv.org/abs/1503.04069">LSTM: A Search Space Odyssey</a></strong></li>
+      <li><strong> <a href="http://www.aclweb.org/anthology/W09-1119">Named Entity Recognition</a></strong></li>
+      <li><strong> <a href="http://nlp.stanford.edu/pubs/CICLing2011-manning-tagging.pdf">Part of Speach Tagging</a></strong> </li> 
+      <li><strong> <a href="http://www.eecs.berkeley.edu/~gdurrett/papers/durrett-klein-emnlp2013.pdf">Coreference Resolution</a></strong></li> 
+      <li><strong> <a href="http://arxiv.org/pdf/1301.3781.pdf">CBOW and Skip-Gram</a></strong></li> 
+      <li><strong> <a href="http://arxiv.org/abs/1502.05698">Toward AI Complete Question Answering: A Set of Prerequisite Toy Tasks</a></strong></li>
+      <li><strong> <a href="http://arxiv.org/pdf/1410.3916v8.pdf">Memory Networks </a></strong> </li> 
+    </ul>
+
+    <!-- Datasets 
+    <p>You are welcome to come to our office hours to brainstorm and suggest your project ideas. We also provide a list of popular NLP datasets:</p>
+    
+    <p>
+      <ul>
+        <li><a href="">dataset</a></li>
+      </ul>
+    </p>
+    -->
+
+    <!-- Datasets -->
+    <p>If you would like to use AWS for your project, please read <a href="http://cs224d.stanford.edu/supplemntary/aws-tutorial-2.pdf">our tutorial</a></p>
+
+  <h2>Important Dates</h2>
+
+  Course project proposal: due April 21.<br>
+  Course project milestone: due May 15.<br>
+  The poster session will be held 2-5pm at Gates (AT&amp;T patio) on June 1.<br>
+  Final course project: due <b>June 3</b> (11:59pm). <br><br>
+
+  <h2>Grading Policy</h2>
+  <pre>
+  Final Project: 40%
+  milestone: 5%
+  write-up: 10%
+   •  clarity, structure, language, references: 3%
+   •  background literature survey, good understanding of the problem: 3%
+   •  good insights and discussions of methodology, analysis, results, etc.: 4%
+  technical: 12%
+   •  correctness: 4%
+   •  depth: 4%
+   •  innovation: 4%
+  evaluation and results: 10%
+   •  sound evaluation metric: 3%
+   •  thoroughness in analysis and experimentation: 3%
+   •  results and performance: 4%
+  poster: 3% (+2% bonus for best few posters)
+ </pre>
+
+  <a name="proposal"></a><h2>Project Proposal</h2>
+  The project proposal should be a few short paragraphs (200-400 words overall). If you work on your own project, your proposal should contain the <b>headings</b>:
+  <p>
+  <ul>
+    <li>
+    <b>Problem Description:</b> What is the problem that you will be investigating? Why is it interesting?
+    </li>
+    <li>
+    <b>Data:</b> What data will you use? If you are collecting new datasets, how do you plan to collect them?
+    </li>
+    <li>
+    <b>Methodology/Algorithm:</b> What method or algorithm are you proposing? If there are existing implementations, will you use them and how? How do you plan to improve or modify such implementations?
+    </li>
+    <li>
+    <b>Related Work:</b> What reading will you examine to provide context and background?
+    </li>
+    <li>
+    <b>Evaluation Plan:</b> How will you evaluate your results? Qualitatively, what kind of results do you expect (e.g. plots or figures)? Quantitatively, what kind of analysis will you use to evaluate and/or compare your results (e.g. what performance metrics or statistical tests)?
+    </li>
+  </ul>
+</p>
+
+  <strong>Submission</strong>: Please upload one proposal per team on Gradescope. Unless you have written a petition proposal to us (and we have accepted it) you are only allowed to have two people per team. 
+
+  <a name="milestone"></a><h2>Project Milestone</h2>
+  Your project milestone report should be between 2 - 3 pages using the <a href="project_template/template.zip">provided template</a>. The following is a suggested structure for your report:
+  <p>
+    <ul>
+      <li>Title, Author(s)</li>
+      <li>Introduction: this section introduces your problem, and the overall plan for approaching your problem</li>
+      <li>Problem statement: Describe your problem precisely specifying the dataset to be used, expected results and evaluation</li>
+      <li>Technical Approach and Models: Describe the methods you intend to apply to solve the given problem</li>
+      <li>
+      Intermediate/Preliminary Experiments & Results: State and evaluate your results upto the milestone
+      </li>
+    </ul>
+  </p>
+  <p>
+  <strong>Submission</strong>: Please upload a on PDF file per team on Gradescope.
+  </p>
+
+  <a name="final"></a><h2>Final Submission</h2>
+  Your final write-up should be between <b>6 - 8</b> pages using the <a href="project_template/template.zip">provided template</a>. After the class, we will post all the final reports online so that you can read about each others' work. If you do not want your writeup to be posted online, then please let us know at least a week in advance of the final writeup submission deadline. 
+
+  <br><br>
+  Submit your final submission as intsructed below:
+  <ol>
+    <li>A PDF file of your final report submitted through Gradescope.
+    <li>(OPTIONAL) zip file with Supplementary Materials (e.g. code) through our Box folder.</li>
+  </ol>
+  Note that, each individual in a team is required to make submission (i.e. the same PDF and zip file) for grading purpose.
+  <br/><br/>
+
+  <script src="https://app.box.com/embed/upload.js?token=ffozzsg6crqykjy65u0djkoco2bh73n4&folder_id=8221649877&w=385&h=450&i=Please%20submit%20your%20supplementary%20files.%20Name%20the%20file%20with%20your%20SUID%20(e.g.%20jsmith.zip).%20Include%20a%20readme%20file.&d=1&t=Submit%20file%20to%20CS224D%20Staff&r=1" type="text/javascript"></script>
+
+  <br>
+  <b>Report</b>. The following is a suggested structure for the report:
+  <ul>
+  <li>Title, Author(s)</li>
+  <li>Abstract: It should not be more than 300 words</li>
+  <li>Introduction: this section introduces your problem, and the overall plan for approaching your problem</li>
+  <li>Background/Related Work: This section discusses relevant literature for your project</li>
+  <li>Approach: This section details the framework of your project. Be specific, which means you might want to include equations, figures, plots, etc</li>
+  <li>Experiment: This section begins with what kind of experiments you're doing, what kind of dataset(s) you're using, and what is the way you measure or evaluate your results. It then shows in details the results of your experiments. By details, we mean both quantitative evaluations (show numbers, figures, tables, etc) as well as qualitative results (show images, example results, etc).</li>
+  <li>Conclusion: What have you learned? Suggest future ideas.</li>
+  <li>References: This is absolutely necessary.</li>
+  </ul>
+
+  <br>
+  <b>Supplementary Material</b> is not counted toward your 6-8 page limit.
+
+  <br>Examples of things to put in your supplementary material: 
+  <ul>
+    <li>Source code (if your project proposed an algorithm, or code that is relevant and important for your project.).</li>
+    <li>Cool videos, interactive visualizations, demos, etc.</li>
+  </ul>
+  Examples of things to not put in your supplementary material: 
+  <ul>
+    <li>All of a submodules (Theano, Caffe, CoreNLP) source code.</li>
+    <li>Various ordinary data preprocessing scripts.</li>
+    <li>Any code that is larger than 1MB.</li>
+    <li>Model checkpoints.</li>
+    <li>A computer virus.</li>
+  </ul>
+  
+  <a name="poster"></a><h2>Poster Session</h2>
+  We will hold a poster session in which you will present the results of your projects is form of a poster. The poster session will happen on June 3rd, 2:00-5:00pm, at AT&amp;T patio (the lawn behind Gates building). Poster boards and easels will be provided.
+
+  <h2>Example Project Reports</h2>
+  Your project reports should structure like a NLP conference paper (NIPS, ICML, EMNLP, ACL, etc.). You can find publications from Stanford NLP Group from <a href="http://nlp.stanford.edu/publications.shtml">here</a>. In addition, you may also take a look at some previous projects from other Stanford CS classes, such as <a href="http://web.stanford.edu/class/cs221/sample-projects/">CS221</a>, <a href="http://cs229.stanford.edu/projects2013.html">CS229</a>, <a href="http://web.stanford.edu/class/cs224w/projects.html">CS224W</a> and <a href="http://web.stanford.edu/class/cs224w/projects.html">CS231n</a>
+
+  <h2>Collaboration Policy</h2>
+  You can work in teams of up to <strong>2</strong> people.
+
+  <h2>Honor Code</h2>
+  You may consult any papers, books, online references, or publicly available implementations for ideas and code that you may want to incorporate into your strategy or algorithm, so long as you clearly cite your sources in your code and your writeup. However, under no circumstances may you look at another group’s code or incorporate their code into your project.
+  
+  <br><br>
+  If you are doing a similar project for another class, you must make this clear and write down the exact portion of the project that is being counted for CS224d.
+
+</div>
+
+<!-- jQuery and Boostrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
