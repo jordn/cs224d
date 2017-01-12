@@ -30,7 +30,9 @@ def softmax(x):
 
     x = x.reshape(rows, cols)
     shifted = x - np.max(x, axis=1).reshape(x.shape[0], 1)
-    out = np.exp(shifted)/np.sum(np.exp(shifted), axis=1)
+    top = np.exp(shifted)
+    bottom = np.sum(np.exp(shifted), axis=1)
+    out = top/bottom[:, None]
     ### END YOUR CODE
     
     return out
