@@ -46,12 +46,8 @@ def softmaxCostAndGradient(predicted, target, outputVectors, dataset):
     # assignment!                                                  
 
     ### YOUR CODE HERE)
-    # cost = (target - predicted)
     scores = np.dot(outputVectors, predicted)
     probabilities = softmax(scores)[0, :]
-
-    target_onehot = np.zeros_like(probabilities)
-    target_onehot[target] = 1
 
     cost = np.log(probabilities[target])
     grad_scores = probabilities
@@ -81,11 +77,30 @@ def negSamplingCostAndGradient(predicted, target, outputVectors, dataset, K=10):
     # assignment!
 
     ### YOUR CODE HERE
+    scores = sigmoid(np.dot(outputVectors, predicted))
+
+    sampled_tokens = [dataset.sampleTokenIdx() for i in range(K)]
+    #sampled_vectors =  outputVectors[sampled_tokens]
+
+    cost = - np.log(scores[target]) \
+           - np.sum(np.log(1 - scores[sampled_tokens]))
+
+    gradPred = (scores[target] - 1) * outputVectors[target] \
+               + np.sum(outputVectors[sampled_tokens].T * (scores[sampled_tokens] - 1), axis=1)
+
+    grad = np.dot(scores.reshape(outputVectors.shape[0], 1),
+           predicted.reshape(1, outputVectors.shape[1]))
+    # grad =
+    # grad_scores = probabilities
+    # grad_scores[target] -= 1
+    #
+    # grad_pred = np.dot(outputVectors.T, grad_scores)
+    # grad = np.dot(grad_scores.reshape(outputVectors.shape[0],1),
+    #               predicted.reshape(1,outputVectors.shape[1]))
 
     ### END YOUR CODE
-
+    # raise NotImplementedError
     return cost, gradPred, grad
-
 
 def skipgram(currentWord, C, contextWords, tokens, inputVectors, outputVectors,
     dataset, word2vecCostAndGradient = softmaxCostAndGradient):
