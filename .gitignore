@@ -131,3 +131,6 @@ tmtagsHistory
 .bundle
 
 .idea
+
+assignment1/assignment1/cs224d/datasets/stanfordSentimentTreebank
+*.npy
