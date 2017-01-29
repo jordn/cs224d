@@ -29,10 +29,10 @@ def softmax(x):
         cols = x.shape[1]
 
     x = x.reshape(rows, cols)
-    shifted = x - np.max(x, axis=1).reshape(x.shape[0], 1)
+    shifted = x - np.max(x, axis=1, keepdims=True)
     top = np.exp(shifted)
-    bottom = np.sum(np.exp(shifted), axis=1)
-    out = top/bottom[:, None]
+    bottom = np.sum(top, axis=1)
+    out = np.divide(top, bottom)
     ### END YOUR CODE
     
     return out
